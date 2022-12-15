@@ -2,8 +2,8 @@ const app = require('./app');
 const mongoose = require('mongoose');
 const config = require('./config');
 
-const connect = url => {
-  return mongoose.connect(url, config.db.options);
+const connect = async url => {
+  return await mongoose.connect(url, config.db.options);
 };
 
 if (require.main === module) {

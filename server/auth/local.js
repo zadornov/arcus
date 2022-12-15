@@ -9,7 +9,9 @@ const localStrategy = new LocalStrategy(async (username, password, done) => {
     const valid = await user.isValidPassword(password);
     if (!valid) return done(null, false, { message: 'invalid password' });
 
-    return done(null, user.toJSON());
+    let j = user.toJSON();
+
+    return done(null, j);
   } catch (err) {
     done(err);
   }

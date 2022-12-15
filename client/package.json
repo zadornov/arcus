@@ -23,6 +23,7 @@
     "build": "react-scripts build",
     "now-build": "npm run build && mv build dist",
     "test": "react-scripts test",
+    "test:docker": "sudo docker compose exec client npm run test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

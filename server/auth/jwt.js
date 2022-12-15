@@ -6,7 +6,9 @@ const jwtStrategy = new JwtStrategy(
     secretOrKey: config.jwt.secret,
     jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken()
   },
-  (token, done) => done(null, token.user)
+  (token, done) => {
+    return done(null, token.user);
+  }
 );
 
 module.exports = jwtStrategy;

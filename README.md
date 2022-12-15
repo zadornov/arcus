@@ -1,6 +1,10 @@
-# asperitas
+# arcus
 
-Asperitas is a full stack reddit clone that I wrote to learn more about Node.js, React, and NoSQL databases. The name asperitas comes from a type of [cloud](https://en.wikipedia.org/wiki/Asperitas_(cloud)).
+Asperitas is a full stack reddit clone that [d11z](https://github.com/d11z/asperitas) wrote to learn more about Node.js, React, and NoSQL databases. The name asperitas comes from a type of [cloud](https://en.wikipedia.org/wiki/Asperitas_(cloud)).
+
+Arcus is a fork of asperitas I made to learn more about typescript, docker, and some reviving old projects. The name arcus also comes from a type of [cloud](https://en.wikipedia.org/wiki/Arcus_cloud).
+
+🌩️
 
 ## Installation
 

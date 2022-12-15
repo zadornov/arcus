@@ -4,12 +4,14 @@
   "private": true,
   "main": "index.js",
   "jest": {
-    "setupTestFrameworkScriptFile": "./test/setup.js"
+    "setupTestFrameworkScriptFile": "./test/setup.js",
+    "testEnvironment": "node"
   },
   "scripts": {
-    "dev": "nodemon ./index.js",
+    "dev": "nodemon --inspect=0.0.0.0:9229 ./index.js",
     "start": "node index.js",
-    "test": "jest"
+    "test": "jest",
+    "test:docker": "sudo docker compose exec server npm run test"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
