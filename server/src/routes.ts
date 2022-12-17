@@ -1,7 +1,10 @@
-const users = require('./controllers/users');
-const posts = require('./controllers/posts');
-const comments = require('./controllers/comments');
-const { jwtAuth, postAuth, commentAuth } = require('./auth');
+import * as users from './controllers/users';
+import * as posts from './controllers/posts';
+import * as comments from './controllers/comments';
+import { jwtAuth, postAuth, commentAuth } from './auth';
+
+// had to import this way, otherwise router complains about validation middleware 
+// https://github.com/DefinitelyTyped/DefinitelyTyped/issues/26146#issuecomment-393386416
 const router = require('express').Router();
 
 router.post('/login', users.validate(), users.login);
@@ -22,7 +25,7 @@ router.param('comment', comments.load);
 router.post('/post/:post', [jwtAuth, comments.validate], comments.create);
 router.delete('/post/:post/:comment', [jwtAuth, commentAuth], comments.destroy);
 
-module.exports = app => {
+const registerRouter = app => {
   app.use('/api', router);
 
   app.get('*', (req, res) => {
@@ -36,3 +39,5 @@ module.exports = app => {
     next(err);
   });
 };
+
+export default registerRouter;

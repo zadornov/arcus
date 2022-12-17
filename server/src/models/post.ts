@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const commentSchema = new Schema({
@@ -97,4 +97,4 @@ postSchema.post('save', function (doc, next) {
 
 const Post = mongoose.model('Post', postSchema);
 
-module.exports = Post;
+export default Post;

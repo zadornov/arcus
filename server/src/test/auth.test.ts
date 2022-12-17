@@ -1,9 +1,10 @@
-const request = require('supertest');
-const mongoose = require('mongoose');
-const jwt = require('jsonwebtoken');
-const app = require('../app');
-const config = require('../config');
-const { validUser } = require('./factories');
+import request from 'supertest';
+import mongoose from 'mongoose';
+import jwt from 'jsonwebtoken';
+import app from '../app';
+import config from '../config';
+import { validUser } from './factories';
+
 const User = mongoose.model('User');
 
 process.env.TEST_SUITE = 'auth';
@@ -68,6 +69,7 @@ describe('auth endpoints', () => {
         .expect(res => {
           const { token } = res.body;
           const payload = jwt.verify(token, config.jwt.secret);
+          // @ts-ignore
           expect(payload.user.username).toEqual(user.username);
         })
         .expect(200, done);
@@ -183,6 +185,7 @@ describe('auth endpoints', () => {
         .expect(res => {
           const { token } = res.body;
           const payload = jwt.verify(token, config.jwt.secret);
+          // @ts-ignore
           expect(payload.user.username).toEqual(username.nonExisting);
         })
         .expect(201, done);

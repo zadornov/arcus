@@ -1,11 +1,11 @@
-const { faker } = require('@faker-js/faker');
+import { faker } from '@faker-js/faker';
 
-exports.validUser = () => ({
+export const validUser = () => ({
   username: faker.name.firstName(),
   password: 'password'
 });
 
-exports.validPost = (author, category) => ({
+export const validPost = (author, category) => ({
   title: faker.lorem.sentence(),
   url: faker.internet.url(),
   category,

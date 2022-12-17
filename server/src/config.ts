@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
   port: 8080,
   clientUrl: process.env.BASE_URL || "http://localhost:3000", 
   db: {
@@ -17,3 +17,5 @@ module.exports = {
     expiry: '7d'
   }
 };
+
+export default config;
