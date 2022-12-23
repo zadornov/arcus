@@ -1,4 +1,3 @@
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled from 'styled-components/macro';
 import NavLink from '../shared/NavLink';
 import { headerItem, wideFont, link, transition } from '../shared/helpers';

@@ -1,5 +1,4 @@
 import React from 'react';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled from 'styled-components/macro';
 import CommentListItem from './Item';
 
@@ -14,7 +13,7 @@ const mapComments = (comments: any) =>
   ));
 
 const sortComments = (comments: any) =>
-  // @ts-expect-error TS(2362): The left-hand side of an arithmetic operation must... Remove this comment to see the full error message
+  // @ts-expect-error TS(2362) FIXME: The left-hand side of an arithmetic operation must... Remove this comment to see the full error message
   comments.sort((a: any, b: any) => new Date(b.created) - new Date(a.created));
 
 const CommentList = ({ comments }: any) =>

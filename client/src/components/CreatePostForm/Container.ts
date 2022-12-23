@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import { compose } from 'redux';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'redu... Remove this comment to see the full error message
 import { reduxForm } from 'redux-form';
 import {
   titleValidator,
@@ -20,13 +19,13 @@ const validate = (fields: any) => {
   const type = fields.type ? fields.type : '';
   const text = fields.text ? fields.text : '';
 
-  // @ts-expect-error TS(2339): Property 'title' does not exist on type '{}'.
+  // @ts-expect-error TS(2339) FIXME: Property 'title' does not exist on type '{}'.
   errors.title = titleValidator(title);
-  // @ts-expect-error TS(2339): Property 'url' does not exist on type '{}'.
+  // @ts-expect-error TS(2339) FIXME: Property 'url' does not exist on type '{}'.
   if (type === 'link') errors.url = urlValidator(url);
-  // @ts-expect-error TS(2339): Property 'text' does not exist on type '{}'.
+  // @ts-expect-error TS(2339) FIXME: Property 'text' does not exist on type '{}'.
   if (type === 'text') errors.text = textPostValidator(text);
-  // @ts-expect-error TS(2339): Property 'type' does not exist on type '{}'.
+  // @ts-expect-error TS(2339) FIXME: Property 'type' does not exist on type '{}'.
   errors.type = typeValidator(type);
 
   return errors;

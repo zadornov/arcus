@@ -1,5 +1,4 @@
 import React from 'react';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'enzy... Remove this comment to see the full error message
 import { shallow } from 'enzyme';
 import PostDetailInfoBar from '../components/PostDetail/InfoBar/Component';
 import DeleteButton from '../components/shared/DeleteButton';
@@ -27,10 +26,11 @@ it('renders a delete button when author is logged in', () => {
     author: { id: 'abc123' },
   };
 
-  // @ts-expect-error TS(2769): No overload matches this call.
+  // @ts-expect-error TS(2769) FIXME: No overload matches this call.
   const wrapper = shallow(<PostDetailInfoBar token {...data} />);
 
   expect(
+    // @ts-expect-error TS(2339) FIXME: Property 'deletePost' does not exist on type 'Comp... Remove this comment to see the full error message
     wrapper.contains(<DeleteButton onClick={wrapper.instance().deletePost} />)
   ).toEqual(true);
 });
@@ -41,11 +41,12 @@ it("doesn't render a delete post button if user is not author", () => {
     author: { id: 'def456' },
   };
 
-  // @ts-expect-error TS(2769): No overload matches this call.
+  // @ts-expect-error TS(2769) FIXME: No overload matches this call.
   const wrapper = shallow(<PostDetailInfoBar token {...data} />);
 
   expect(
     wrapper.contains(
+      // @ts-expect-error TS(2339) FIXME: Property 'deletePost' does not exist on type 'Comp... Remove this comment to see the full error message
       <DeleteButton deletePost={wrapper.instance().deletePost} />
     )
   ).toEqual(false);
@@ -55,6 +56,7 @@ it("doesn't render a delete post button if user is not logged in", () => {
   const wrapper = shallow(<PostDetailInfoBar />);
   expect(
     wrapper.contains(
+      // @ts-expect-error TS(2339) FIXME: Property 'deletePost' does not exist on type 'Comp... Remove this comment to see the full error message
       <DeleteButton deletePost={wrapper.instance().deletePost} />
     )
   ).toEqual(false);

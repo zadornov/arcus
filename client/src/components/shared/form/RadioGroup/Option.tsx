@@ -1,5 +1,4 @@
 import React from 'react';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled from 'styled-components';
 import { transition, wideFont } from '../../helpers';
 
@@ -47,7 +46,10 @@ const RadioGroupOption = (props: any) => (
       id={props.value}
       onChange={props.onClick}
     />
-    <Label htmlFor={props.value} active={props.active}>
+    <Label htmlFor={
+      props.value 
+      // @ts-expect-error TS(2769) FIXME: No overload matches this call. //hacky AF compiler 
+      } active={props.active}>
       {props.label}
     </Label>
   </>

@@ -1,5 +1,4 @@
 import React from 'react';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled from 'styled-components/macro';
 import PostVoteUpvote from './Upvote';
 import PostVoteDownvote from './Downvote';
@@ -36,7 +35,7 @@ class PostVote extends React.Component {
   }
 
   componentWillUpdate(nextProps: any, nextState: any, nextContext: any) {
-    // @ts-expect-error TS(2339): Property 'score' does not exist on type 'Readonly<... Remove this comment to see the full error message
+    // @ts-expect-error TS(2339) FIXME: Property 'score' does not exist on type 'Readonly<... Remove this comment to see the full error message
     if (this.props.score !== nextProps.score) {
       const didVote = PostVote.existingVote(nextProps);
       this.setState({
@@ -45,7 +44,7 @@ class PostVote extends React.Component {
         didUpvote: didVote === 1,
         didDownvote: didVote === -1,
       });
-      // @ts-expect-error TS(2339): Property 'token' does not exist on type 'Readonly<... Remove this comment to see the full error message
+      // @ts-expect-error TS(2339) FIXME: Property 'token' does not exist on type 'Readonly<... Remove this comment to see the full error message
     } else if (this.props.token !== nextProps.token && !nextProps.token) {
       this.setState({
         didVote: false,
@@ -56,12 +55,12 @@ class PostVote extends React.Component {
   }
 
   castVote(vote: any) {
-    // @ts-expect-error TS(2339): Property 'attemptVote' does not exist on type 'Rea... Remove this comment to see the full error message
+    // @ts-expect-error TS(2339) FIXME: Property 'attemptVote' does not exist on type 'Rea... Remove this comment to see the full error message
     const { attemptVote, id, token } = this.props;
     if (token) {
       attemptVote(id, vote);
       this.setState({
-        // @ts-expect-error TS(2339): Property 'score' does not exist on type 'Readonly<... Remove this comment to see the full error message
+        // @ts-expect-error TS(2339) FIXME: Property 'score' does not exist on type 'Readonly<... Remove this comment to see the full error message
         score: this.state.score + vote - this.state.didVote,
         didVote: vote,
         didUpvote: vote === 1,
@@ -70,30 +69,32 @@ class PostVote extends React.Component {
     }
   }
 
-  // @ts-expect-error TS(2339): Property 'didUpvote' does not exist on type 'Reado... Remove this comment to see the full error message
+  // @ts-expect-error TS(2339) FIXME: Property 'didUpvote' does not exist on type 'Reado... Remove this comment to see the full error message
   upvote = () => this.castVote(this.state.didUpvote ? 0 : 1);
 
-  // @ts-expect-error TS(2339): Property 'didDownvote' does not exist on type 'Rea... Remove this comment to see the full error message
+  // @ts-expect-error TS(2339) FIXME: Property 'didDownvote' does not exist on type 'Rea... Remove this comment to see the full error message
   downvote = () => this.castVote(this.state.didDownvote ? 0 : -1);
 
   render() {
     return (
       <Wrapper>
         <PostVoteUpvote
-          // @ts-expect-error TS(2339): Property 'token' does not exist on type 'Readonly<... Remove this comment to see the full error message
+          // @ts-expect-error TS(2769) FIXME: No overload matches this call.
           canVote={!!this.props.token}
-          // @ts-expect-error TS(2339): Property 'didUpvote' does not exist on type 'Reado... Remove this comment to see the full error message
+          // @ts-expect-error TS(2339) FIXME: Property 'didUpvote' does not exist on type 'Reado... Remove this comment to see the full error message
           didVote={this.state.didUpvote}
           onClick={this.upvote}
-          />
-        <span>{
-          // @ts-expect-error TS(2339):
-          this.state.score
-        }</span>
+        />
+        <span>
+          {
+            // @ts-expect-error TS(2339) FIXME: Property 'score' does not exist on type 'Readonly<... Remove this comment to see the full error message
+            this.state.score
+          }
+        </span>
         <PostVoteDownvote
-          // @ts-expect-error TS(2339): Property 'token' does not exist on type 'Readonly<... Remove this comment to see the full error message
+          // @ts-expect-error TS(2769) FIXME: No overload matches this call.
           canVote={!!this.props.token}
-          // @ts-expect-error TS(2339): Property 'didDownvote' does not exist on type 'Rea... Remove this comment to see the full error message
+          // @ts-expect-error TS(2339) FIXME: Property 'didDownvote' does not exist on type 'Rea... Remove this comment to see the full error message
           didVote={this.state.didDownvote}
           onClick={this.downvote}
         />

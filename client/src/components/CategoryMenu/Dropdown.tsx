@@ -1,5 +1,4 @@
 import React from 'react';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled from 'styled-components/macro';
 import categories from '../../categories';
 import SelectWrapper from '../shared/form/SelectWrapper';
@@ -25,21 +24,25 @@ class CategoryMenuDropdown extends React.Component {
 
   handleOnChange = (event: any) => {
     const category = event.target.value;
-    // @ts-expect-error TS(2339): Property 'category' does not exist on type 'Readon... Remove this comment to see the full error message
+    // @ts-expect-error TS(2339) FIXME: Property 'category' does not exist on type 'Readon... Remove this comment to see the full error message
     if (category !== this.props.category) {
       const url = category === 'all' ? '/' : `/a/${category}`;
-      // @ts-expect-error TS(2339): Property 'history' does not exist on type 'Readonl... Remove this comment to see the full error message
+      // @ts-expect-error TS(2339) FIXME: Property 'history' does not exist on type 'Readonl... Remove this comment to see the full error message
       this.props.history.push(url);
     }
   };
 
   render() {
     return (
+      // @ts-expect-error TS(2769) FIXME: No overload matches this call.
       <SelectWrapper flex>
-        <Dropdown value={
-          // @ts-expect-error TS(2339): Property 'category' does not exist on type 'Readon... Remove this comment to see the full error message
-          this.props.category}
-          onChange={this.handleOnChange}>
+        <Dropdown
+          value={
+            // @ts-expect-error TS(2339) FIXME: Property 'category' does not exist on type 'Readon... Remove this comment to see the full error message
+            this.props.category
+          }
+          onChange={this.handleOnChange}
+        >
           {this.mapCategories()}
         </Dropdown>
       </SelectWrapper>

@@ -1,7 +1,5 @@
 import React from 'react';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled from 'styled-components/macro';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'redu... Remove this comment to see the full error message
 import { Field } from 'redux-form';
 import Input from '../shared/form/Input';
 
@@ -24,7 +22,7 @@ class CommentFormTextArea extends React.Component {
   onKeyDown = (e: any) => {
     if (e.keyCode === 13) {
       e.preventDefault();
-      // @ts-expect-error TS(2339): Property 'onSubmit' does not exist on type 'Readon... Remove this comment to see the full error message
+      // @ts-expect-error TS(2339) FIXME: Property 'onSubmit' does not exist on type 'Readon... Remove this comment to see the full error message
       this.props.onSubmit();
     }
   };
@@ -40,7 +38,7 @@ class CommentFormTextArea extends React.Component {
   );
 
   render() {
-    // @ts-expect-error TS(2339)
+    // @ts-expect-error TS(2339) FIXME: Property 'name' does not exist on type 'Readonly<{... Remove this comment to see the full error message
     return <Field name={this.props.name} component={this.renderField} />;
   }
 }

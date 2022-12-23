@@ -9,7 +9,7 @@ import authMiddleware from './middleware/auth';
 import errorMiddleware from './middleware/error';
 import themeMiddleware from './middleware/theme';
 
-// @ts-expect-error TS(2339): Property '__REDUX_DEVTOOLS_EXTENSION_COMPOSE__' do... Remove this comment to see the full error message
+// @ts-expect-error TS(2339) FIXME: Property '__REDUX_DEVTOOLS_EXTENSION_COMPOSE__' do... Remove this comment to see the full error message
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export default createStore(

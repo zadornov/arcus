@@ -1,11 +1,9 @@
 import React from 'react';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled from 'styled-components/macro';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import { css } from 'styled-components';
 
 interface HeadingSizes {
-  [heading: string]: number
+  [heading: string]: number;
 }
 
 const headingSizes: HeadingSizes = {
@@ -40,6 +38,7 @@ const Heading = styled.span`
 
 const headingRenderer = (props: any) => {
   const levelString = `h${props.level}`;
+  // @ts-expect-error TS(2745) FIXME: This JSX tag's 'children' prop expects type 'never... Remove this comment to see the full error message
   return <Heading as={levelString}>{props.children}</Heading>;
 };
 

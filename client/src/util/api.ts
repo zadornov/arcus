@@ -8,7 +8,7 @@ const methods = {
     const options = {
       method: 'GET',
       headers: {
-        // @ts-expect-error TS(2698): Spread types may only be created from object types... Remove this comment to see the full error message
+        // @ts-expect-error TS(2698) FIXME: Spread types may only be created from object types... Remove this comment to see the full error message
         ...(token && { Authorization: `Bearer ${token}` }),
       },
     };
@@ -26,7 +26,7 @@ const methods = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        // @ts-expect-error TS(2698): Spread types may only be created from object types... Remove this comment to see the full error message
+        // @ts-expect-error TS(2698) FIXME: Spread types may only be created from object types... Remove this comment to see the full error message
         ...(token && { Authorization: `Bearer ${token}` }),
       },
       body: JSON.stringify(body),
@@ -53,7 +53,7 @@ const methods = {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
-        // @ts-expect-error TS(2698): Spread types may only be created from object types... Remove this comment to see the full error message
+        // @ts-expect-error TS(2698) FIXME: Spread types may only be created from object types... Remove this comment to see the full error message
         ...(token && { Authorization: `Bearer ${token}` }),
       },
     };
@@ -115,7 +115,7 @@ export async function castVote(id: any, vote: any, token: any) {
     '-1': 'downvote',
   };
 
-  // @ts-expect-error TS(7053): Element implicitly has an 'any' type because expre... Remove this comment to see the full error message
+  // @ts-expect-error TS(7053) FIXME: Element implicitly has an 'any' type because expre... Remove this comment to see the full error message
   const voteType = voteTypes[vote];
 
   return await methods.get(`post/${id}/${voteType}`, token);

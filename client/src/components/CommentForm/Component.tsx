@@ -1,5 +1,4 @@
 import React from 'react';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled from 'styled-components/macro';
 import Form from '../shared/form/Form';
 import { transition } from '../shared/helpers';
@@ -41,18 +40,20 @@ const StyledForm = styled(Form)`
 `;
 
 class CommentForm extends React.Component {
-  // @ts-expect-error TS(2339): Property 'attemptCreateComment' does not exist on ... Remove this comment to see the full error message
+  // @ts-expect-error TS(2339) FIXME: Property 'attemptCreateComment' does not exist on ... Remove this comment to see the full error message
   createComment = (comment: any) => this.props.attemptCreateComment(comment);
 
-  // @ts-expect-error TS(2339): Property 'handleSubmit' does not exist on type 'Re... Remove this comment to see the full error message
+  // @ts-expect-error TS(2339) FIXME: Property 'handleSubmit' does not exist on type 'Re... Remove this comment to see the full error message
   onSubmit = () => this.props.handleSubmit(this.createComment);
 
   render() {
     return (
       <StyledForm onSubmit={this.onSubmit()}>
-        <CommentFormTextArea 
-          // @ts-expect-error
-          name='comment' onSubmit={this.onSubmit()} />
+        <CommentFormTextArea
+          // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+          name='comment'
+          onSubmit={this.onSubmit()}
+        />
         <CommentFormSubmitButton />
       </StyledForm>
     );

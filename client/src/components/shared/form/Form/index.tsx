@@ -1,5 +1,4 @@
 import React from 'react';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled from 'styled-components/macro';
 import { transition } from '../../helpers';
 import FormWrapper from './Wrapper';
@@ -18,6 +17,7 @@ const StyledForm = styled.form`
 `;
 
 const Form = ({ className, wide, ...props }: any) => (
+  // @ts-expect-error TS(2769) FIXME: No overload matches this call.
   <FormWrapper className={className} wide={wide}>
     <StyledForm {...props} />
     {props.loading && <LoadingIndicatorSpinner />}

@@ -1,5 +1,4 @@
 import React from 'react';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'redu... Remove this comment to see the full error message
 import { Field } from 'redux-form';
 import Form from '../shared/form/Form';
 import renderField from '../shared/form/renderField';
@@ -16,21 +15,21 @@ class LoginForm extends React.Component {
   }
 
   redirectIfLoggedIn() {
-    // @ts-expect-error TS(2339): Property 'token' does not exist on type 'Readonly<... Remove this comment to see the full error message
+    // @ts-expect-error TS(2339) FIXME: Property 'token' does not exist on type 'Readonly<... Remove this comment to see the full error message
     if (this.props.token) this.props.history.push('/');
   }
 
   onSubmit = ({ username, password }: any) => {
-    // @ts-expect-error TS(2339): Property 'attemptLogin' does not exist on type 'Re... Remove this comment to see the full error message
+    // @ts-expect-error TS(2339) FIXME: Property 'attemptLogin' does not exist on type 'Re... Remove this comment to see the full error message
     this.props.attemptLogin(username, password);
   };
 
   render() {
     return (
       <Form
-        // @ts-expect-error TS(2339): Property 'loading' does not exist on type 'Readonl... Remove this comment to see the full error message
+        // @ts-expect-error TS(2339) FIXME: Property 'loading' does not exist on type 'Readonl... Remove this comment to see the full error message
         loading={this.props.loading}
-        // @ts-expect-error TS(2339): Property 'handleSubmit' does not exist on type 'Re... Remove this comment to see the full error message
+        // @ts-expect-error TS(2339) FIXME: Property 'handleSubmit' does not exist on type 'Re... Remove this comment to see the full error message
         onSubmit={this.props.handleSubmit(this.onSubmit)}
       >
         <Field

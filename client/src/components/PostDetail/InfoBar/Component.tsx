@@ -1,5 +1,4 @@
 import React from 'react';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled from 'styled-components/macro';
 import DeleteButton from '../../shared/DeleteButton';
 
@@ -20,33 +19,40 @@ const Wrapper = styled.div`
 `;
 
 class PostDetailInfoBar extends React.Component {
-  // @ts-expect-error TS(2339): Property 'attemptDeletePost' does not exist on typ... Remove this comment to see the full error message
+  // @ts-expect-error TS(2339) FIXME: Property 'attemptDeletePost' does not exist on typ... Remove this comment to see the full error message
   deletePost = () => this.props.attemptDeletePost();
 
-  
   render() {
     return (
-      <Wrapper round={
-        // @ts-expect-error TS(2339)
-        !this.props.token
-      }>
-        <span>{
-          // @ts-expect-error TS(2339)
-          this.props.views
-        } views</span>
+      <Wrapper
+        // @ts-expect-error TS(2769) FIXME: No overload matches this call.
+        round={
+          // @ts-expect-error TS(2339) FIXME: Property 'token' does not exist on type 'Readonly<... Remove this comment to see the full error message
+          !this.props.token
+        }
+      >
+        <span>
+          {
+            // @ts-expect-error TS(2339) FIXME: Property 'views' does not exist on type 'Readonly<... Remove this comment to see the full error message
+            this.props.views
+          }{' '}
+          views
+        </span>
         <span>&nbsp;|&nbsp;</span>
-        <span>{// @ts-expect-error TS(2339)
-        this.props.upvotePercentage
+        <span>{
+          // @ts-expect-error TS(2339) FIXME: Property 'upvotePercentage' does not exist on type... Remove this comment to see the full error message
+          this.props.upvotePercentage
         }% upvoted</span>
         {
-        // @ts-expect-error TS(2339): Property 'token' does not exist on type 'Readonly<... Remove this comment to see the full error message
-        this.props.token &&
-          // @ts-expect-error TS(2339): Property 'user' does not exist on type 'Readonly<{... Remove this comment to see the full error message
-          (this.props.user.id === this.props.author.id ||
-            // @ts-expect-error TS(2339): Property 'user' does not exist on type 'Readonly<{... Remove this comment to see the full error message
-            this.props.user.admin) && (
-            <DeleteButton onClick={this.deletePost} />
-          )}
+          // @ts-expect-error TS(2339) FIXME: Property 'token' does not exist on type 'Readonly<... Remove this comment to see the full error message
+          this.props.token &&
+            // @ts-expect-error TS(2339) FIXME: Property 'user' does not exist on type 'Readonly<{... Remove this comment to see the full error message
+            (this.props.user.id === this.props.author.id ||
+              // @ts-expect-error TS(2339) FIXME: Property 'user' does not exist on type 'Readonly<{... Remove this comment to see the full error message
+              this.props.user.admin) && (
+              <DeleteButton onClick={this.deletePost} />
+            )
+        }
       </Wrapper>
     );
   }

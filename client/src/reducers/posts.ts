@@ -54,7 +54,7 @@ export default (state = initialState, action: any) => {
     case DELETE_POST_REQUEST:
       return { ...state, isDeleting: true };
     case DELETE_POST_SUCCESS:
-      // @ts-expect-error TS(2339): Property 'id' does not exist on type 'never'.
+      // @ts-expect-error TS(2339) FIXME: Property 'id' does not exist on type 'never'.
       items = state.items.filter((i) => i.id !== action.post);
       return { ...state, isDeleting: false, items, post: null };
     case DELETE_POST_ERROR:

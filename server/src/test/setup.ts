@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
-const { connect } = require('../index');
-const config = require('../config');
+import mongoose from 'mongoose';
+import { connect } from '../index';
+import config from '../config';
 
 const clearDb = done => {
   mongoose.connection.dropDatabase();

@@ -1,7 +1,5 @@
 import React from 'react';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled from 'styled-components/macro';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import { Route } from 'react-router-dom';
 import CategoryMenuDropdown from './Dropdown';
 import CategoryMenuCreatePostButton from './CreatePostButton';
@@ -23,7 +21,7 @@ const CategoryMenu = (props: any) => (
       path='/a/:category'
       children={({ match, history }: any) => (
         <CategoryMenuDropdown
-          // @ts-expect-error TS(2769): No overload matches this call.
+          // @ts-expect-error TS(2769) FIXME: No overload matches this call.
           category={match ? match.params.category : 'all'}
           history={history}
         />

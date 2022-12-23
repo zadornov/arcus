@@ -1,5 +1,4 @@
 import React from 'react';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'enzy... Remove this comment to see the full error message
 import { shallow } from 'enzyme';
 import PostVote from '../components/Post/Vote/Component';
 
@@ -8,7 +7,7 @@ it('renders without crashing', () => {
 });
 
 it('renders the correct score', () => {
-  // @ts-expect-error TS(2322): Type '{ score: number; }' is not assignable to type 
+  // @ts-expect-error TS(2322) FIXME: Type '{ score: number; }' is not assignable to typ... Remove this comment to see the full error message
   const wrapper = shallow(<PostVote score={1} />);
   expect(wrapper.find('span').text()).toEqual('1');
 });

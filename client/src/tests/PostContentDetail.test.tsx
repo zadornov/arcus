@@ -1,7 +1,5 @@
 import React from 'react';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'enzy... Remove this comment to see the full error message
 import { shallow, mount } from 'enzyme';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import { MemoryRouter } from 'react-router-dom';
 import moment from 'moment';
 import PostContentDetail from '../components/Post/Content/Detail';

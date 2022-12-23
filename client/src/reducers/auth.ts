@@ -10,7 +10,7 @@ import {
 } from '../actions/auth';
 
 const token = localStorage.getItem('token');
-// @ts-expect-error TS(2571): Object is of type 'unknown'.
+// @ts-expect-error TS(2571) FIXME: Object is of type 'unknown'.
 const user = token && jwtDecode(token).user;
 
 const initialState = {
@@ -25,7 +25,7 @@ export default (state = initialState, action: any) => {
       return { ...state, loading: true };
     case SIGNUP_SUCCESS:
     case LOGIN_SUCCESS:
-      // @ts-expect-error TS(2571): Object is of type 'unknown'.
+      // @ts-expect-error TS(2571) FIXME: Object is of type 'unknown'.
       const user = jwtDecode(action.token).user;
       return {
         ...state,

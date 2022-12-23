@@ -1,7 +1,6 @@
+// @ts-nocheck
 import React from 'react';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import { ThemeProvider } from 'styled-components';
-// @ts-expect-error TS(7016): Could not find a declaration file for module 'reac... Remove this comment to see the full error message
 import { Router, Route, Switch } from 'react-router-dom';
 import theme from '../../theme';
 import history from '../../util/history';
