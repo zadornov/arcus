@@ -20,7 +20,6 @@ const Item = styled(NavLink)`
 const SidebarCategoryListItem = ({ category }: any) => {
   const isAll = category === 'all';
   return (
-    // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
     <Item exact={isAll} to={isAll ? '/' : `/a/${category}`}>
       {category}
     </Item>

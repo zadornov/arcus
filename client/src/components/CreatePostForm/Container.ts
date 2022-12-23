@@ -11,7 +11,6 @@ import {
 import { attemptCreatePost } from '../../actions/posts';
 import categories from '../../categories';
 import withAuth from '../../util/withAuth';
-// @ts-expect-error TS(6142): Module './Component' was resolved to '/home/zadorn... Remove this comment to see the full error message
 import CreatePostForm from './Component';
 
 const validate = (fields: any) => {

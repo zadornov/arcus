@@ -14,10 +14,7 @@ const Box = styled.div`
 `;
 
 const LoadingIndicatorBox = () => (
-  // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
   <Box>
-    // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is
-    provided... Remove this comment to see the full error message
     <LoadingIndicatorSpinner />
   </Box>
 );

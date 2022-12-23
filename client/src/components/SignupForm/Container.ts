@@ -5,7 +5,6 @@ import { reduxForm } from 'redux-form';
 import withAuth from '../../util/withAuth';
 import { attemptSignup } from '../../actions/auth';
 import validate from './validate';
-// @ts-expect-error TS(6142): Module './Component' was resolved to '/home/zadorn... Remove this comment to see the full error message
 import SignupForm from './Component';
 
 const mapStateToProps = (state: any) => ({

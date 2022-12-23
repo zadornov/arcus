@@ -13,9 +13,7 @@ const List = styled.ul`
 `;
 
 const listRenderer = (props: any) => {
-  // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
   if (props.ordered) return <List as='ol'>{props.children}</List>;
-  // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
   return <List>{props.children}</List>;
 };
 

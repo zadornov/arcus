@@ -13,7 +13,6 @@ const CreatePostButton = styled(Button)`
 `;
 
 const SidebarCreatePostButton = () => (
-  // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
   <CreatePostButton as={Link} to='/createpost'>
     create post
   </CreatePostButton>

@@ -2,9 +2,7 @@ import React from 'react';
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'redu... Remove this comment to see the full error message
 import { Field } from 'redux-form';
 import categories from '../../categories';
-// @ts-expect-error TS(6142): Module '../shared/form/Form' was resolved to '/hom... Remove this comment to see the full error message
 import Form from '../shared/form/Form';
-// @ts-expect-error TS(6142): Module '../shared/form/renderField' was resolved t... Remove this comment to see the full error message
 import renderField from '../shared/form/renderField';
 import SubmitButton from '../shared/form/SubmitButton';
 
@@ -32,7 +30,6 @@ class CreatePostForm extends React.Component {
 
   mapCategories = () =>
     categories.map((category, index) => (
-      // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
       <option key={index} value={category}>
         {category}
       </option>
@@ -40,7 +37,6 @@ class CreatePostForm extends React.Component {
 
   render() {
     return (
-      // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
       <Form
         // @ts-expect-error TS(2339): Property 'isFetching' does not exist on type 'Read... Remove this comment to see the full error message
         loading={this.props.isFetching}
@@ -48,7 +44,6 @@ class CreatePostForm extends React.Component {
         onSubmit={this.props.handleSubmit(this.onSubmit)}
         wide
       >
-        // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
         <Field
           name='type'
           label='type'
@@ -56,7 +51,6 @@ class CreatePostForm extends React.Component {
           component={renderField}
           options={postTypes}
         />
-        // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
         <Field
           name='category'
           label='category'
@@ -65,16 +59,15 @@ class CreatePostForm extends React.Component {
         >
           {this.mapCategories()}
         </Field>
-        // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
         <Field name='title' label='title' type='text' component={renderField} />
+        {
         // @ts-expect-error TS(2339): Property 'form' does not exist on type 'Readonly<{... Remove this comment to see the full error message
-        {this.props.form.values.type === 'link' && (
-          // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
+          this.props.form.values.type === 'link' && (
           <Field name='url' label='url' type='url' component={renderField} />
         )}
+        {
         // @ts-expect-error TS(2339): Property 'form' does not exist on type 'Readonly<{... Remove this comment to see the full error message
-        {this.props.form.values.type === 'text' && (
-          // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
+          this.props.form.values.type === 'text' && (
           <Field
             name='text'
             label='text'
@@ -82,7 +75,6 @@ class CreatePostForm extends React.Component {
             component={renderField}
           />
         )}
-        // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
         <SubmitButton type='submit'>create post</SubmitButton>
       </Form>
     );

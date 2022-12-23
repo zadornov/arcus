@@ -30,7 +30,6 @@ class CommentFormTextArea extends React.Component {
   };
 
   renderField = (field: any) => (
-    // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
     <TextArea
       as='textarea'
       {...field.input}
@@ -41,7 +40,7 @@ class CommentFormTextArea extends React.Component {
   );
 
   render() {
-    // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
+    // @ts-expect-error TS(2339)
     return <Field name={this.props.name} component={this.renderField} />;
   }
 }

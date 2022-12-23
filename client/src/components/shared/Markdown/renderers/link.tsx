@@ -14,7 +14,6 @@ const Link = styled.a`
   }
 `;
 
-// @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
 const linkRenderer = (props: any) => <Link {...props} />;
 
 export default linkRenderer;

@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 // This optional code is used to register a service worker.
 // register() is not called by default.
 
@@ -21,7 +23,6 @@ const isLocalhost = Boolean(
 );
 
 export function register(config: any) {
-  // @ts-expect-error TS(2580): Cannot find name 'process'. Do you need to install... Remove this comment to see the full error message
   if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
     // The URL constructor is available in all browsers that support SW.
     // @ts-expect-error TS(2580): Cannot find name 'process'. Do you need to install... Remove this comment to see the full error message

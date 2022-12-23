@@ -18,13 +18,8 @@ const StyledForm = styled.form`
 `;
 
 const Form = ({ className, wide, ...props }: any) => (
-  // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
   <FormWrapper className={className} wide={wide}>
-    // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is
-    provided... Remove this comment to see the full error message
     <StyledForm {...props} />
-    // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is
-    provided... Remove this comment to see the full error message
     {props.loading && <LoadingIndicatorSpinner />}
   </FormWrapper>
 );

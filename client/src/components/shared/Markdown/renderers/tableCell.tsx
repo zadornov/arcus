@@ -21,9 +21,7 @@ const TableCell = styled.td`
 `;
 
 const tableCellRenderer = (props: any) => {
-  // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
   if (props.isHeader) return <TableCell as='th'>{props.children}</TableCell>;
-  // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
   return <TableCell>{props.children}</TableCell>;
 };
 

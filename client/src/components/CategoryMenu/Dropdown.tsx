@@ -18,7 +18,6 @@ const Dropdown = styled.select`
 class CategoryMenuDropdown extends React.Component {
   mapCategories = () =>
     ['all', ...categories].map((category, index) => (
-      // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
       <option key={index} value={category}>
         {category}
       </option>
@@ -36,11 +35,11 @@ class CategoryMenuDropdown extends React.Component {
 
   render() {
     return (
-      // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
       <SelectWrapper flex>
-        // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is
-        provided... Remove this comment to see the full error message
-        <Dropdown value={this.props.category} onChange={this.handleOnChange}>
+        <Dropdown value={
+          // @ts-expect-error TS(2339): Property 'category' does not exist on type 'Readon... Remove this comment to see the full error message
+          this.props.category}
+          onChange={this.handleOnChange}>
           {this.mapCategories()}
         </Dropdown>
       </SelectWrapper>

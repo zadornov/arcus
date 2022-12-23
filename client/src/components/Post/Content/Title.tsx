@@ -28,13 +28,10 @@ const Wrapper = styled.div`
 const renderTitle = (props: any) => {
   switch (props.type) {
     case 'link':
-      // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
       return <a href={props.url}>{props.title}</a>;
 
     case 'text':
-      // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
       if (props.full) return <span>{props.title}</span>;
-      // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
       return <Link to={`/a/${props.category}/${props.id}`}>{props.title}</Link>;
 
     default:
@@ -43,7 +40,6 @@ const renderTitle = (props: any) => {
 };
 
 const PostContentTitle = (props: any) => (
-  // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
   <Wrapper full={props.full}>{renderTitle(props)}</Wrapper>
 );
 

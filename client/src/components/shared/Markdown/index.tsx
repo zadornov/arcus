@@ -3,7 +3,6 @@ import React from 'react';
 import styled from 'styled-components/macro';
 import ReactMarkdown from 'react-markdown';
 import breaks from 'remark-breaks';
-// @ts-expect-error TS(6142): Module './renderers' was resolved to '/home/zadorn... Remove this comment to see the full error message
 import renderers from './renderers';
 
 const StyledReactMarkdown = styled(ReactMarkdown)`
@@ -57,7 +56,6 @@ const allowed = [
 ];
 
 const Markdown = (props: any) => (
-  // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
   <StyledReactMarkdown
     source={props.children}
     plugins={[breaks]}

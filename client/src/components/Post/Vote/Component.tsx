@@ -78,22 +78,18 @@ class PostVote extends React.Component {
 
   render() {
     return (
-      // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
       <Wrapper>
-        // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is
-        provided... Remove this comment to see the full error message
         <PostVoteUpvote
           // @ts-expect-error TS(2339): Property 'token' does not exist on type 'Readonly<... Remove this comment to see the full error message
           canVote={!!this.props.token}
           // @ts-expect-error TS(2339): Property 'didUpvote' does not exist on type 'Reado... Remove this comment to see the full error message
           didVote={this.state.didUpvote}
           onClick={this.upvote}
-        />
-        // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is
-        provided... Remove this comment to see the full error message
-        <span>{this.state.score}</span>
-        // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is
-        provided... Remove this comment to see the full error message
+          />
+        <span>{
+          // @ts-expect-error TS(2339):
+          this.state.score
+        }</span>
         <PostVoteDownvote
           // @ts-expect-error TS(2339): Property 'token' does not exist on type 'Readonly<... Remove this comment to see the full error message
           canVote={!!this.props.token}

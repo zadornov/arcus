@@ -13,8 +13,9 @@ const StyledLink = styled(Link)`
 `;
 
 const Author = ({ username }: any) => (
-  // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
   <StyledLink to={`/u/${username}`}>{username}</StyledLink>
 );
 
 export default Author;
+
+

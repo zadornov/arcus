@@ -1,11 +1,8 @@
 import React from 'react';
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled from 'styled-components/macro';
-// @ts-expect-error TS(6142): Module '../../shared/Author' was resolved to '/hom... Remove this comment to see the full error message
 import Author from '../../shared/Author';
-// @ts-expect-error TS(6142): Module './Timestamp' was resolved to '/home/zadorn... Remove this comment to see the full error message
 import CommentDetailTimestamp from './Timestamp';
-// @ts-expect-error TS(6142): Module '../../shared/DeleteButton' was resolved to... Remove this comment to see the full error message
 import DeleteButton from '../../shared/DeleteButton';
 
 const Wrapper = styled.div`
@@ -21,19 +18,21 @@ class CommentDetail extends React.Component {
 
   render() {
     return (
-      // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
       <Wrapper>
-        // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
-        <Author username={this.props.author && this.props.author.username} />
-        // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
-        <CommentDetailTimestamp created={this.props.created} />
+        <Author username={
+          // @ts-expect-error TS(2339): Property 'token' does not exist on type 'Readonly<... Remove this comment to see the full error message
+          this.props.author && this.props.author.username} />
+        <CommentDetailTimestamp created={
+          // @ts-expect-error TS(2339): Property 'token' does not exist on type 'Readonly<... Remove this comment to see the full error message
+          this.props.created
+        }/>
+        {
         // @ts-expect-error TS(2339): Property 'token' does not exist on type 'Readonly<... Remove this comment to see the full error message
-        {this.props.token &&
+        this.props.token &&
           // @ts-expect-error TS(2339): Property 'user' does not exist on type 'Readonly<{... Remove this comment to see the full error message
           (this.props.user.id === this.props.author.id ||
             // @ts-expect-error TS(2339): Property 'user' does not exist on type 'Readonly<{... Remove this comment to see the full error message
             this.props.user.admin) && (
-            // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
             <DeleteButton onClick={this.deleteComment} />
           )}
       </Wrapper>

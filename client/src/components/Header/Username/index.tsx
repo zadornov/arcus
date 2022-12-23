@@ -12,10 +12,7 @@ const Wrapper = styled(HeaderNavLink)`
 `;
 
 const HeaderUsername = (props: any) => (
-  // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
   <Wrapper to={`/u/${props.username}`}>
-    // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is
-    provided... Remove this comment to see the full error message
     <HeaderUsernameText>{props.username}</HeaderUsernameText>
   </Wrapper>
 );

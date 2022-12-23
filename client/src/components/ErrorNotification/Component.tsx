@@ -41,18 +41,16 @@ const Wrapper = styled.div`
 class ErrorNotification extends React.Component {
   render() {
     return (
-      // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
       <TransitionGroup component={null}>
+        {
         // @ts-expect-error TS(2339): Property 'error' does not exist on type 'Readonly<... Remove this comment to see the full error message
-        {this.props.error && (
-          // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
+        this.props.error && (
           <CSSTransition classNames={className} timeout={300}>
-            // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
             <Wrapper>
-              // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
               <ErrorNotificationMessage>
+                {
                 // @ts-expect-error TS(2339): Property 'error' does not exist on type 'Readonly<... Remove this comment to see the full error message
-                {this.props.error.message}
+                this.props.error.message}
               </ErrorNotificationMessage>
             </Wrapper>
           </CSSTransition>

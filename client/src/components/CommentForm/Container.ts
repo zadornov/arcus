@@ -3,7 +3,6 @@ import { compose } from 'redux';
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'redu... Remove this comment to see the full error message
 import { reduxForm } from 'redux-form';
 import { attemptCreateComment } from '../../actions/posts';
-// @ts-expect-error TS(6142): Module './Component' was resolved to '/home/zadorn... Remove this comment to see the full error message
 import CommentForm from './Component';
 
 const mapDispatchToProps = { attemptCreateComment };

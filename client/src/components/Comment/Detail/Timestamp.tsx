@@ -9,7 +9,6 @@ const Timestamp = styled.span`
 `;
 
 const CommentDetailTimestamp = (props: any) => (
-  // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
   <Timestamp>{moment(props.created).fromNow()}</Timestamp>
 );
 

@@ -20,7 +20,6 @@ const Logo = styled(Link)`
   }
 `;
 
-// @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
 const HeaderLogo = () => <Logo to='/'>arcus</Logo>;
 
 export default HeaderLogo;

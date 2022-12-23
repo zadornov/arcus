@@ -1,7 +1,6 @@
 import React from 'react';
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled from 'styled-components/macro';
-// @ts-expect-error TS(6142): Module '../../shared/DeleteButton' was resolved to... Remove this comment to see the full error message
 import DeleteButton from '../../shared/DeleteButton';
 
 const Wrapper = styled.div`
@@ -24,23 +23,28 @@ class PostDetailInfoBar extends React.Component {
   // @ts-expect-error TS(2339): Property 'attemptDeletePost' does not exist on typ... Remove this comment to see the full error message
   deletePost = () => this.props.attemptDeletePost();
 
+  
   render() {
     return (
-      // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
-      <Wrapper round={!this.props.token}>
-        // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
-        <span>{this.props.views} views</span>
-        // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
+      <Wrapper round={
+        // @ts-expect-error TS(2339)
+        !this.props.token
+      }>
+        <span>{
+          // @ts-expect-error TS(2339)
+          this.props.views
+        } views</span>
         <span>&nbsp;|&nbsp;</span>
-        // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
-        <span>{this.props.upvotePercentage}% upvoted</span>
+        <span>{// @ts-expect-error TS(2339)
+        this.props.upvotePercentage
+        }% upvoted</span>
+        {
         // @ts-expect-error TS(2339): Property 'token' does not exist on type 'Readonly<... Remove this comment to see the full error message
-        {this.props.token &&
+        this.props.token &&
           // @ts-expect-error TS(2339): Property 'user' does not exist on type 'Readonly<{... Remove this comment to see the full error message
           (this.props.user.id === this.props.author.id ||
             // @ts-expect-error TS(2339): Property 'user' does not exist on type 'Readonly<{... Remove this comment to see the full error message
             this.props.user.admin) && (
-            // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
             <DeleteButton onClick={this.deletePost} />
           )}
       </Wrapper>

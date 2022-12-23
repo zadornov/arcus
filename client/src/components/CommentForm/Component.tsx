@@ -1,12 +1,9 @@
 import React from 'react';
 // @ts-expect-error TS(7016): Could not find a declaration file for module 'styl... Remove this comment to see the full error message
 import styled from 'styled-components/macro';
-// @ts-expect-error TS(6142): Module '../shared/form/Form' was resolved to '/hom... Remove this comment to see the full error message
 import Form from '../shared/form/Form';
 import { transition } from '../shared/helpers';
-// @ts-expect-error TS(6142): Module './TextArea' was resolved to '/home/zadorno... Remove this comment to see the full error message
 import CommentFormTextArea from './TextArea';
-// @ts-expect-error TS(6142): Module './SubmitButton' was resolved to '/home/zad... Remove this comment to see the full error message
 import CommentFormSubmitButton from './SubmitButton';
 
 const StyledForm = styled(Form)`
@@ -52,13 +49,10 @@ class CommentForm extends React.Component {
 
   render() {
     return (
-      // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
       <StyledForm onSubmit={this.onSubmit()}>
-        // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is
-        provided... Remove this comment to see the full error message
-        <CommentFormTextArea name='comment' onSubmit={this.onSubmit()} />
-        // @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is
-        provided... Remove this comment to see the full error message
+        <CommentFormTextArea 
+          // @ts-expect-error
+          name='comment' onSubmit={this.onSubmit()} />
         <CommentFormSubmitButton />
       </StyledForm>
     );

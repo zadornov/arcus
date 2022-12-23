@@ -12,7 +12,6 @@ const Header = styled.span`
   color: ${(props: any) => props.theme.mutedText};
 `;
 
-// @ts-expect-error TS(17004): Cannot use JSX unless the '--jsx' flag is provided... Remove this comment to see the full error message
 const SidebarCategoryListHeader = () => <Header>categories</Header>;
 
 export default SidebarCategoryListHeader;
